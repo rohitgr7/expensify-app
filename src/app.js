@@ -31,7 +31,6 @@ ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
 
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
-    console.log('log in');
     store.dispatch(login(user.uid));
     store.dispatch(startSetExpenses()).then(() => {
       renderApp();
@@ -40,7 +39,6 @@ firebase.auth().onAuthStateChanged(user => {
       }
     });
   } else {
-    console.log('log out');
     store.dispatch(logout());
     renderApp();
     history.push('/');
