@@ -1,8 +1,10 @@
 import React from 'react';
 
 const HelpPage = () => (
-  <div>
-    This is from help component
+  <div className="container">
+    <br />
+    <br />
+    <h3>This is the help page</h3>
   </div>
 );
 

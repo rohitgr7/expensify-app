@@ -20,13 +20,18 @@ class ExpenseListFilters extends React.Component {
   render() {
     return (
       <div>
+        <br />
+        <form className="form-inline">
         <input
+          className="form-control form-control-lg mb-2 mr-sm-2"
+          placeholder="Enter Text"
           type="text" value={this.props.filters.text}
           onChange={(e) => {
             this.props.dispatch(setTextFilter(e.target.value));
           }}
         />
         <select
+          className="form-control form-control-lg mb-2 mr-sm-2"
           value={this.props.filters.sortBy}
           onChange={(e) => {
             if (e.target.value === 'date') {
@@ -49,6 +54,8 @@ class ExpenseListFilters extends React.Component {
           numberOfMonths={1}
           isOutsideRange={() => false}
         />
+        </form>
+        <br />
       </div>
     );
   }
